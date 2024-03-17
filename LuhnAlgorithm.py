@@ -1,5 +1,5 @@
 def verify_card_number(card_number):
-    sum_off_odd_digits = 0
+    sum_of_odd_digits = 0
 #indexing last four digits skipping by one
     card_number_reversed = card_number[::-1]
     odd_digits = card_number_reversed[::2]
@@ -25,13 +25,13 @@ def verify_card_number(card_number):
 def main():
     card_number = '4111-1111-4555-1142'
 #for INVALID! changed the last digit to one 
-    card_number = '4111-1111-4555-1141'
+#   card_number = '4111-1111-4555-1141'
 #String manipulation using maketrans to create a translation table
     card_translation = str.maketrans({'-':'',' ':''})
 #calling translate method on the string
     translated_card_number = card_number.translate(card_translation)
     if verify_card_number(translated_card_number):
-        print('VALID!)
+        print('VALID!')
     else:
         print('INVALID!')
 #   print(translated_card_number)
